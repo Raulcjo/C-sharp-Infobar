@@ -50,15 +50,15 @@ namespace InfobarAPI.Controllers
             return pedido;
         }
 
-        [HttpGet("ViewCol{idCol}")]
+               [HttpGet("ViewCol{idCol}")]
         public async Task<ActionResult<List<PedidoViewCol>>> GetPedidosCol(int idCol)
         {
             if (_context.Pedidos == null)
             {
                 return NotFound();
             }
-            var colaborador = await _context.Colaboradores.FindAsync(idCol);
-            var lista = colaborador.Pedidos.ToList();
+
+            var lista = _context.Pedidos.Where(pedido => pedido.ColaboradorId == idCol);
 
             var pedido = lista.Select(p => new PedidoViewCol 
             { 
