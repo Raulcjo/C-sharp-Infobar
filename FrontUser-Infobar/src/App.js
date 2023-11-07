@@ -12,7 +12,10 @@ export default props => {
 
     return (
         <NavigationContainer>
-        <Tab.Navigator>
+        <Tab.Navigator
+            initialRouteName="ListaPedidos"
+            screenOptions={minhaScreenOptions}
+        >
             <Tab.Screen name="Meus Dados" component={MeusDados}
             options={{
                 tabBarLabel: 'Home',
@@ -25,15 +28,15 @@ export default props => {
             options={{
                 tabBarLabel: 'Scanner',
                 tabBarIcon: ({color, size}) => (
-                    <MaterialCommunityIcons name="barcode-scan" size={24} color="black" />
+                    <MaterialCommunityIcons name="barcode-scan" size={24} color={color} />
                 )
             }}
             />
-            <Tab.Screen name="ListaPedidos" component={ListaPedidos}
+            <Tab.Screen name="Lista de Pedidos" component={ListaPedidos}
                 options={{
-                    tabBarLabel: 'Scanner',
+                    tabBarLabel: 'Pedidos',
                     tabBarIcon: ({color, size}) => (
-                        <FontAwesome name="shopping-cart" size={24} color="black" />
+                        <FontAwesome name="shopping-cart" size={24} color={color} />
                     )
                 }}
             />
@@ -45,5 +48,12 @@ export default props => {
 
 
 const minhaScreenOptions = {
+    headerStyle:{
+        backgroundColor: '#003f5c'
+    },
+    headerTintColor: '#e6e7e8',
+    headerTitleStyle:{
+        fontWeight: 'bold'
 
+    }
 }

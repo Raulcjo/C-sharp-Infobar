@@ -70,5 +70,21 @@ export default StyleSheet.create({
         fontSize: 20,
         marginTop: 10,
         
+    },
+    ButtonScanner:{
+        backgroundColor: '#003f5c',
+        padding: 20,
+        borderRadius: 10,
+        margin: 20
+    },
+    ButtonScannerDigitar:{
+        backgroundColor: '#003f5c',
+        padding: 20,
+        borderRadius: 10,
+        margin: 20
+    },
+    TextoButtonScanner:{
+        fontSize: 20,
+        color: '#fff',
     }
 })
