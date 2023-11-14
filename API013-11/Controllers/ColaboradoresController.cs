@@ -29,7 +29,10 @@ namespace InfobarAPI.Controllers
             {
                 return NotFound();
             }
-            return await _context.Colaboradores.ToListAsync();
+
+            var colaboradores =  await _context.Colaboradores.ToListAsync();
+
+            return colaboradores;
         }
 
         // GET: api/Colaboradores/5

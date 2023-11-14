@@ -36,10 +36,10 @@ namespace InfobarAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Produto>> GetProduto(int id)
         {
-          if (_context.Produtos == null)
-          {
-              return NotFound();
-          }
+            if (_context.Produtos == null)
+            {
+                return NotFound();
+            }
             var produto = await _context.Produtos.FindAsync(id);
 
             if (produto == null)
@@ -49,6 +49,28 @@ namespace InfobarAPI.Controllers
 
             return produto;
         }
+
+/*        [HttpGet("{codigo}")]
+        public async Task<ActionResult<IEnumerable<ScannerProduto>>> GetProdutosCodigo(string codBarras)
+        {
+            if (_context.Produtos == null)
+            {
+                return NotFound();
+            }
+
+            var scanner = _context.Produtos.FindAsync(codBarras);
+
+            if (scanner == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return scanner;
+            
+
+        }*/
+
 
         // PUT: api/Produtos/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754

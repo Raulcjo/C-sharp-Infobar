@@ -3,7 +3,7 @@
     public class EscolhaCalendario
     {
         public int ColaboradorId { get; set; }
-        public DateTime DiaComeco{ get; set;}
-        public DateTime DiaFim { get; set;}
+        public DateTime PeriodoComeco{ get; set;}
+        public DateTime PeriodoFim { get; set;}
     }
 }
